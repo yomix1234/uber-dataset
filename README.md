@@ -1,89 +1,57 @@
-🚖  Uber Dataset Analysis
+🚖 Uber Trips Analysis (September 2014)
+Overview
 
-This project explores Uber trip data for September 2014, providing insights into ride patterns, peak hours, and trends using Python data analysis and visualization tools.
+This project looks at Uber pickup data for New York City in September 2014.
+The goal was to understand demand patterns, visualize rider behavior, and test if pickup locations could help predict trip timing.
 
-📊 Dataset
+Tools & Libraries
 
-File: uber-raw-data-sep14.csv
+Python (pandas, numpy) for data wrangling
 
-Source: Uber trip records dataset (NYC, September 2014).
+matplotlib, seaborn, and plotly for charts and visuals
 
-Columns: Date/Time, Lat, Lon, Base.
+scikit-learn for the machine learning model
 
-🛠️ Tools & Libraries
+Dataset
 
-Python
+The dataset includes pickup records with:
 
-Jupyter Notebook
+date/time – timestamp of the ride
 
-Pandas → Data cleaning & manipulation
+lat, lon – pickup coordinates
 
-Matplotlib & Seaborn → Data visualization
+base – base company code
 
-Plotly → Interactive plots
+Engineered features: day, weekday, hour
 
-NumPy → Numerical operations
+Analysis Workflow
 
-🔍 Key Insights
+Data Prep
 
-Identified peak ride hours and busiest weekdays.
+Converted timestamps to datetime
 
-Mapped ride density across New York City.
+Extracted day, weekday, and hour for richer analysis
 
-Explored how Uber demand varies by time of day and location.
+Exploratory Analysis
 
-📈 Visuals
+Daily ride counts and weekday patterns
 
-Here are some of the visuals included in the notebook:
+Hourly demand spikes
 
-📍 Heatmap of Uber pickups in NYC.
+Pickup hotspots mapped on NYC
 
-⏰ Hourly distribution of rides.
+Modeling
 
-📅 Weekly trends in Uber demand.
+Random Forest Classifier to predict the pickup hour from location
 
-🌆 Geospatial plots of pickup locations.
+Accuracy ~35% (showing that location alone doesn’t strongly determine pickup time)
 
-This project explores Uber trip data for September 2014, providing insights into ride patterns, peak hours, and trends using Python data analysis and visualization tools.
+Findings
 
-📊 Dataset
+Rides spike in the evening rush hours (5–8 PM).
 
-File: uber-raw-data-sep14.csv
+Fridays and Saturdays are consistently the busiest.
 
-Source: Uber trip records dataset (NYC, September 2014).
+Central Manhattan and JFK are clear hotspots.
 
-Columns: Date/Time, Lat, Lon, Base.
-
-🛠️ Tools & Libraries
-
-Python
-
-Jupyter Notebook
-
-Pandas → Data cleaning & manipulation
-
-Matplotlib & Seaborn → Data visualization
-
-Plotly → Interactive plots
-
-NumPy → Numerical operations
-
-🔍 Key Insights
-
-Identified peak ride hours and busiest weekdays.
-
-Mapped ride density across New York City.
-
-Explored how Uber demand varies by time of day and location.
-
-📈 Visuals
-
-Here are some of the visuals included in the notebook:
-
-📍 Heatmap of Uber pickups in NYC.
-
-⏰ Hourly distribution of rides.
-
-📅 Weekly trends in Uber demand.
-
-🌆 Geospatial plots of pickup locations.
+Basic models struggle to predict pickup hour just from location data — additional context (like weather or events) would help.
